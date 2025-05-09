@@ -8,19 +8,14 @@ public class TankView : MonoBehaviour
     private TankController _tankController;
     public Rigidbody Rigidbody;
 
-    private  Material _material;
-    private  List<Renderer> _renderers = new ();
+    public   List<MeshRenderer> _renderers = new ();
 
     private float movement;
     private float rotation;
     // Start is called before the first frame update
     void Start()
     {
-        _renderers = GetComponentsInChildren<Renderer>().ToList();
-        foreach (Renderer renderer1 in _renderers)
-        {
-            renderer1.SetMaterials(new List<Material>(){_material});
-        }
+
         GameObject camera = GameObject.Find(("Main Camera"));
         camera.transform.SetParent(transform);
         camera.transform.position = new Vector3(0, 6, -6.5f);
@@ -48,14 +43,17 @@ public class TankView : MonoBehaviour
         _tankController = tankController;
     }
 
-    public void SetMaterial(Material material)
+    public void SetColor(Material material)
     {
-        _material = material;
+        foreach (MeshRenderer renderer1 in _renderers)
+        {
+            renderer1.material = material;
+        }
+
     }
 
     public Rigidbody GetRigidbody()
     {
         return Rigidbody;
     }
-
 }

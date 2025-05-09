@@ -12,11 +12,9 @@ public class TankController
     public TankController(TankModel tankModel, TankView tankView, Material material)
     {
         _tankView = Object.Instantiate(tankView);
-        _tankView.SetMaterial(material);
-        _tankModel = tankModel;
-
         _tankModel.SetTankController(this);
-        _tankView.SetTankController(this);
+        _tankView.SetColor(material);
+        _tankModel = tankModel;
         _rigidbody = _tankView.GetRigidbody();
     }
 

@@ -7,12 +7,17 @@ public class TankModel
 
     public float movementSpeed;
     public float rotationSpeed;
+    public TankTypes tankTypes;
+    public Material color;
 
-    public TankModel(float movementSpeed, float rotationSpeed)
+    public TankModel(float movementSpeed, float rotationSpeed, TankTypes tankTypes, Material color)
     {
         this.movementSpeed = movementSpeed;
         this.rotationSpeed = rotationSpeed;
+        this.tankTypes = tankTypes;
+        this.color = color;
     }
+
 
     public float GetMovementSpeed()
     {
