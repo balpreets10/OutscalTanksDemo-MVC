@@ -12,14 +12,12 @@ public class TankSpawner : MonoBehaviour
     public TankView TankView;
     public List<Tank> TankList;
 
-    public TankTypes TankTypes;
     // Start is called before the first frame update
     void Start()
     {
-       CreateTank();
     }
 
-    private void CreateTank()
+    public void CreateTank(TankTypes TankTypes)
     {
         Tank? selectedTank = (from tank in TankList
             where tank.TankTypes == TankTypes
