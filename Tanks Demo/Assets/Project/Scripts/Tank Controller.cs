@@ -9,13 +9,16 @@ public class TankController
     private readonly Rigidbody _rigidbody;
 
 
-    public TankController(TankModel tankModel, TankView tankView, Material material)
+    public TankController(TankModel tankModel, TankView tankView)
     {
+        Debug.Log("Found - " + tankModel.tankTypes);
         _tankView = Object.Instantiate(tankView);
-        _tankModel.SetTankController(this);
-        _tankView.SetColor(material);
-        _tankModel = tankModel;
+        _tankView.SetTankController(this);
         _rigidbody = _tankView.GetRigidbody();
+        _tankModel = tankModel;
+        _tankModel.SetTankController(this);
+        tankView.SetColor(_tankModel.color);
+
     }
 
     public void Move(float movement, float movementSpeed)
