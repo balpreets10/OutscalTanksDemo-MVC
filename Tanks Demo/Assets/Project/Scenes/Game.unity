@@ -229,7 +229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TankView: {fileID: 4977305418129243818, guid: 921f6f54550367f498a212a71c5f8b5d, type: 3}
-  materialRed: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
   TankList:
   - movementSpeed: 30
     rotationSpeed: 20
@@ -243,6 +242,7 @@ MonoBehaviour:
     rotationSpeed: 60
     TankTypes: 1
     color: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+  TankTypes: 2
 --- !u!1 &2094609410
 GameObject:
   m_ObjectHideFlags: 0
